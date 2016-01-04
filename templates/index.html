@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <style>
+      input[type=range][orient=vertical]
+      {
+        writing-mode: bt-lr; /* IE */
+        -webkit-appearance: slider-vertical; /* WebKit */
+        width: 8px;
+        height: 175px;
+        padding: 0 5px;
+      }
+    </style>
+
+    <title>Video Streaming Demonstration</title>
+  </head>
+  <body>
+    <h1>Video Streaming Demonstration</h1>
+    <img src="{{ url_for('video_feed') }}">
+
+    <input id="slider1" type="range" min="0" max="180" step="1" />
+    <input id="slider2" type="range" min="0" max="180" step="1" orient="vertical"  />
+
+
+
+
+  </body>
+</html>
