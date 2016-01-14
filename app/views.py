@@ -1,19 +1,15 @@
-#!/usr/bin/env python
-from flask import Flask, render_template, Response
-
-# emulated camera
-#from camera import Camera
-
-# Raspberry Pi camera module (requires picamera package)
+from app import app
 from app.camera_pi import Camera
 
-app = Flask(__name__)
+@app.route('/ping')
+def index():
+	return "Hello, World!"
 
 
 @app.route('/')
 def index():
     """Video streaming home page."""
-    return render_template('index.html')
+    return app.render_template('index.html')
 
 
 def gen(camera):
@@ -27,7 +23,7 @@ def gen(camera):
 @app.route('/video_feed')
 def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
-    return Response(gen(Camera()),
+    return app.Response(gen(Camera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
@@ -35,5 +31,3 @@ def video_feed():
 def get(self):
         return {'hello': 'world'}
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, threaded=True)
