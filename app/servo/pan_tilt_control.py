@@ -1,5 +1,3 @@
-from servo_control import ServoControl
-
 class PanTillControl:
 
     def __init__(self, horzServo, vertServo):

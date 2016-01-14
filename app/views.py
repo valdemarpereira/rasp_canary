@@ -26,7 +26,3 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
-@app.route('/servo')
-def get(self):
-        return {'hello': 'world'}
-
