@@ -7,7 +7,7 @@ def index():
     return app.render_template('index.html')
 
 @app.route('/ping')
-def index():
+def ping():
 	return "Hello, World!"
 
 def gen(camera):
