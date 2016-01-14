@@ -1,6 +1,10 @@
-from app import app
+from app import app, pantill
+
+
 #from app.servo import ServoControl
+
 
 @app.route('/servo')
 def servo():
-	return "Hello, Servo"
+    pantill.moveDown(20)
+    return "Hello, Servo"
