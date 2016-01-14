@@ -1,16 +1,14 @@
 from app import app
 from app.camera_pi import Camera
 
-@app.route('/ping')
-def index():
-	return "Hello, World!"
-
-
 @app.route('/')
 def index():
     """Video streaming home page."""
     return app.render_template('index.html')
 
+@app.route('/ping')
+def index():
+	return "Hello, World!"
 
 def gen(camera):
     """Video streaming generator function."""
