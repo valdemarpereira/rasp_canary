@@ -5,13 +5,20 @@ from app.servo.servo_control import ServoControl
 
 app = Flask(__name__)
 
+servoh = None
+servov = None
+pantill = None
+
+pantill2 = None
+
 from app import views
 from app import rest_service_servo
 
+print("blah")
 
 @app.before_first_request
-def initialize(self):
-    self.servoh = ServoControl(16)
-    self.servov = ServoControl(18)
-    self.pantill = PanTillControl(self.servoh, self.servov)
+def initialize():
+    servoh = ServoControl(16)
+    servov = ServoControl(18)
+    pantill = PanTillControl(servoh, servov)
     print("Test Init")
