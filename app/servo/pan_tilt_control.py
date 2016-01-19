@@ -8,7 +8,7 @@ class PanTillControl:
         self.horzServo.rotateRight(angle)
 
     def moveDown(self, angle):
-        self.horzServo.rotateRight(angle)
+        self.horzServo.rotateLeft(angle)
 
     def moveLeft(self, angle):
         self.horzServo.rotateLeft(angle)

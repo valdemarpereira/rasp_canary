@@ -11,3 +11,5 @@ pantill = PanTillControl(servoh, servov)
 
 from app import views
 from app import rest_service_servo
+
+print("Test Init")
