@@ -1,10 +1,13 @@
-from app import app, pantill
+from app import app, PanTillControl, ServoControl
 
+servoh = ServoControl(16)
+servov = ServoControl(18)
+pantill = PanTillControl(servoh, servov)
 
-#from app.servo import ServoControl
-
+print("blah")
 
 @app.route('/servo')
 def servo():
+    print("servo_move_debug")
     pantill.moveDown(20)
     return "Hello, Servo"
