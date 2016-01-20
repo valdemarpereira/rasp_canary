@@ -4,7 +4,7 @@ servoh = ServoControl(16)
 servov = ServoControl(18)
 pantill = PanTillControl(servoh, servov)
 
-print("blah")
+print("restServiceServo")
 
 @app.route('/servo')
 def servo():
