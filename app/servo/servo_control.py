@@ -11,6 +11,7 @@ class ServoControl:
         GPIO.setup(pinNumber,GPIO.OUT)
         self.pwm=GPIO.PWM(pinNumber,50)
         self.pwm.start((self.maxDutyCycle - self.minDutyCycle) / 2)
+        print("Servo Init on " + self.pinNumber)
 
     def rotateLeft(self, angle):
         self.pwm.ChangeDutyCycle(self.calculateDutyCycle(angle))
